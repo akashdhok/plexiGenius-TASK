@@ -9,4 +9,5 @@ route.post("/editdata" , empController.EditData)
 route.post("/updatedata" , empController.UpdateData)
 route.post("/search" , empController.SearchData)
 route.get("/getname" , empController.getname)
+route.get("/totalemp" , empController.totalEmp)
 module.exports = route

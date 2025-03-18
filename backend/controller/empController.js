@@ -54,6 +54,10 @@ const getname = async(req , res)=>{
     const data = await empModel.find()
     res.send(data)
 }
+const totalEmp = async(req , res)=>{
+     let count = await empModel.countDocuments()
+        res.json({ count });
+}
 module.exports = {
     RegisterEmployee,
     DisplayData,
@@ -61,5 +65,6 @@ module.exports = {
     EditData,
     UpdateData,
     SearchData,
-    getname
+    getname,
+    totalEmp
 }

@@ -34,10 +34,24 @@ const updateData = async(req , res)=>{
     const data = await taskModel.findByIdAndUpdate(_id , req.body)
     res.send("updated")
 }
+const getCount = async(req , res)=>{
+    let count = await taskModel.countDocuments()
+    res.json({ count });
+}
+const getStatus = async(req , res)=>{
+    const completedCount = await taskModel.countDocuments({ status: "Completed" }); 
+    const pendingCount = await taskModel.countDocuments({ status: "Pending" }); 
+    res.json({
+        completed: completedCount,
+        pending: pendingCount
+    });
+}
 module.exports = {
     GiveTask,
     displayTask,
     DeleteTask,
     editTask,
-    updateData
+    updateData,
+    getCount,
+    getStatus
 }

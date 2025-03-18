@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, Outlet } from 'react-router-dom';
+import BASE_URL from './config';
+import axios from 'axios';
 
 const Dash = () => {
+ 
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark" expand="lg">
         <Container>
-          <Navbar.Brand as={Link} to="/">Admin-Panel</Navbar.Brand>
+          <Navbar.Brand as={Link} to="admindash">Admin-Panel</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -21,6 +24,7 @@ const Dash = () => {
         </Container>
       </Navbar>
       <Outlet />
+     
     </>
   );
 }

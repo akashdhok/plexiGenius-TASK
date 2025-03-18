@@ -9,6 +9,7 @@ import Search from "./pages/Search";
 import AssignTask from "./pages/AssignTask";
 import TaskManagement from "./pages/TaskManagement";
 import EditTask from "./pages/EditTask";
+import AdminDash from "./pages/AdminDash";
 const App = () => {
   return (
     <>
@@ -17,6 +18,8 @@ const App = () => {
       </Routes>
       <Routes>
         <Route path="dash" element={<Dash />}>
+        <Route index element = {<AdminDash/>}/>
+        <Route path="admindash" element = {<AdminDash/>}/>
           <Route path="management" element={<EmployeeManagement />} />
           <Route path="display" element={<EmpData/>} />
           <Route path="editdata/:id" element = {<EditData/>}/>
